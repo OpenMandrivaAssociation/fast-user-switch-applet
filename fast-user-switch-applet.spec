@@ -1,6 +1,6 @@
 %define name fast-user-switch-applet
-%define version 2.17.4
-%define release %mkrel 2
+%define version 2.18.0
+%define release %mkrel 1
 
 Summary: Fast User-Switching Applet for GNOME
 Name: %{name}
@@ -69,5 +69,3 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/gnome/help/%name/
 %dir %_datadir/omf/%name/
 %_datadir/omf/%name/*-C.omf
-
-
