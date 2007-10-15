@@ -1,12 +1,29 @@
 %define name fast-user-switch-applet
 %define version 2.20.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: Fast User-Switching Applet for GNOME
 Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
+# (fc) 2.20.0-2mdv autoselect user name in gdm when switching user (GNOME bug #402475)
+Patch0: fast-user-switch-applet-2.20.0-username.patch
+# (fc) 2.20.0-2mdv change defaults to no show "Others" and show user name instead of "Users" (Fedora)
+Patch1: fast-user-switch-applet-2.17.3-defaults.patch
+# (fc) 2.20.0-2mdv don't crash if not started under GDM (GNOME bug #421080)
+Patch2: fast-user-switch-applet-2.20.0-startx.patch
+# (fc) 2.20.0-2mdv don't connect to session manager (GNOME bug #421090)
+Patch3: fast-user-switch-applet-2.20.0-no-session.patch
+# (fc) 2.20.0-2mdv fix crash in GDM socket search (GNOME bug #408309) (Fedora)
+Patch4: fast-user-switch-applet-2.17.4-socket-check.patch
+# (fc) 2.20.0-2mdv don't call gnome-screensaver with invalid arguments (GNOME bug #477639)
+Patch5: fast-user-switch-applet-2.20.0-throttle.patch
+# (fc) 2.20.0-2mdv improve error dialog (GNOME bug #477656)
+Patch6: fast-user-switch-applet-2.20.0-error-dialog.patch
+# (fc) 2.20.0-2mdv respect gdm Include user key (GNOME bug #477666)
+Patch7: fast-user-switch-applet-2.20.0-many-users.patch
+
 License: GPL
 Group: Graphical desktop/GNOME
 Url: http://ignore-your.tv/fusa/
@@ -28,11 +45,19 @@ the same users as the GDM face browser.
 
 %prep
 %setup -q -n %{name}-%{version}
+%patch0 -p1 -b .username
+%patch1 -p1 -b .defaults
+%patch2 -p1 -b .startx
+%patch3 -p1 -b .no-session
+%patch4 -p1 -b .socket-check
+%patch5 -p1 -b .throttle
+%patch6 -p1 -b .error-dialog
+%patch7 -p1 -b .many-users
 
 %build
 %configure2_5x	--with-users-admin=/usr/bin/userdrake \
 		--with-gdm-setup=/usr/bin/gdmsetup \
-		--with-gdm-config=/etc/X11/gdm/gdm.conf --disable-scrollkeeper
+		--with-gdm-config=/etc/X11/gdm/custom.conf --disable-scrollkeeper
 %make
 
 %install
