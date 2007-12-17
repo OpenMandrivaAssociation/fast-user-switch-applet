@@ -27,7 +27,6 @@ Patch7: fast-user-switch-applet-2.20.0-many-users.patch
 License: GPL
 Group: Graphical desktop/GNOME
 Url: http://ignore-your.tv/fusa/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: gnome-panel-devel
 BuildRequires: perl-XML-Parser
 BuildRequires: gnome-doc-utils
