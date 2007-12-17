@@ -1,6 +1,6 @@
 %define name fast-user-switch-applet
-%define version 2.20.0
-%define release %mkrel 2
+%define version 2.21.0
+%define release %mkrel 1
 
 Summary: Fast User-Switching Applet for GNOME
 Name: %{name}
@@ -11,12 +11,8 @@ Source0: http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
 Patch0: fast-user-switch-applet-2.20.0-username.patch
 # (fc) 2.20.0-2mdv change defaults to no show "Others" and show user name instead of "Users" (Fedora)
 Patch1: fast-user-switch-applet-2.17.3-defaults.patch
-# (fc) 2.20.0-2mdv don't crash if not started under GDM (GNOME bug #421080)
-Patch2: fast-user-switch-applet-2.20.0-startx.patch
 # (fc) 2.20.0-2mdv don't connect to session manager (GNOME bug #421090)
 Patch3: fast-user-switch-applet-2.20.0-no-session.patch
-# (fc) 2.20.0-2mdv fix crash in GDM socket search (GNOME bug #408309) (Fedora)
-Patch4: fast-user-switch-applet-2.17.4-socket-check.patch
 # (fc) 2.20.0-2mdv don't call gnome-screensaver with invalid arguments (GNOME bug #477639)
 Patch5: fast-user-switch-applet-2.20.0-throttle.patch
 # (fc) 2.20.0-2mdv improve error dialog (GNOME bug #477656)
@@ -46,9 +42,7 @@ the same users as the GDM face browser.
 %setup -q -n %{name}-%{version}
 %patch0 -p1 -b .username
 %patch1 -p1 -b .defaults
-%patch2 -p1 -b .startx
 %patch3 -p1 -b .no-session
-%patch4 -p1 -b .socket-check
 %patch5 -p1 -b .throttle
 %patch6 -p1 -b .error-dialog
 %patch7 -p1 -b .many-users
