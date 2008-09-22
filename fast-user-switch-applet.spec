@@ -25,6 +25,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: gnome-panel-devel
 BuildRequires: intltool
 BuildRequires: gnome-doc-utils
+BuildRequires: libglade2.0-devel
 BuildRequires: avahi-glib-devel avahi-client-devel
 BuildRequires: libxslt-proc
 BuildRequires: libxmu-devel
