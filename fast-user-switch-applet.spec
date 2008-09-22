@@ -1,6 +1,6 @@
 %define name fast-user-switch-applet
-%define version 2.22.0
-%define release %mkrel 3
+%define version 2.24.0
+%define release %mkrel 1
 
 Summary: Fast User-Switching Applet for GNOME
 Name: %{name}
@@ -15,17 +15,15 @@ Patch1: fast-user-switch-applet-2.17.3-defaults.patch
 Patch3: fast-user-switch-applet-2.20.0-no-session.patch
 # (fc) 2.20.0-2mdv don't call gnome-screensaver with invalid arguments (GNOME bug #477639)
 Patch5: fast-user-switch-applet-2.20.0-throttle.patch
-# (fc) 2.20.0-2mdv improve error dialog (GNOME bug #477656)
-Patch6: fast-user-switch-applet-2.20.0-error-dialog.patch
 # (fc) 2.20.0-2mdv respect gdm Include user key (GNOME bug #477666)
 Patch7: fast-user-switch-applet-2.20.0-many-users.patch
 
-License: GPL
+License: GPLv2+
 Group: Graphical desktop/GNOME
 Url: http://ignore-your.tv/fusa/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: gnome-panel-devel
-BuildRequires: perl-XML-Parser
+BuildRequires: intltool
 BuildRequires: gnome-doc-utils
 BuildRequires: avahi-glib-devel avahi-client-devel
 BuildRequires: libxslt-proc
@@ -45,7 +43,6 @@ the same users as the GDM face browser.
 %patch1 -p1 -b .defaults
 %patch3 -p1 -b .no-session
 %patch5 -p1 -b .throttle
-%patch6 -p1 -b .error-dialog
 %patch7 -p1 -b .many-users
 
 %build
