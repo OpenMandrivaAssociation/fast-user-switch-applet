@@ -31,6 +31,7 @@ BuildRequires: libglade2.0-devel
 BuildRequires: avahi-glib-devel avahi-client-devel
 BuildRequires: libxslt-proc
 BuildRequires: libxmu-devel
+BuildRequires: gnomeui2-devel
 Requires(post): scrollkeeper
 Requires(postun): scrollkeeper
 
