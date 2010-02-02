@@ -16,7 +16,7 @@ Patch3: fast-user-switch-applet-2.20.0-no-session.patch
 # (fc) 2.20.0-2mdv don't call gnome-screensaver with invalid arguments (GNOME bug #477639)
 Patch5: fast-user-switch-applet-2.20.0-throttle.patch
 # (fc) 2.20.0-2mdv respect gdm Include user key (GNOME bug #477666)
-Patch7: fast-user-switch-applet-2.20.0-many-users.patch
+Patch7: fast-user-switch-applet-2.24.0-many-users.patch
 
 License: GPLv2+
 Group: Graphical desktop/GNOME
