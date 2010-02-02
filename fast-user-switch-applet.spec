@@ -32,6 +32,7 @@ BuildRequires: avahi-glib-devel avahi-client-devel
 BuildRequires: libxslt-proc
 BuildRequires: libxmu-devel
 BuildRequires: gnomeui2-devel
+BuildRequires: gnome-common
 Requires(post): scrollkeeper
 Requires(postun): scrollkeeper
 
@@ -52,7 +53,7 @@ the same users as the GDM face browser.
 %patch9 -p0 -b .str
 
 %build
-autoreconf -fi
+NOCONFIGURE=yes gnome-autogen.sh
 %configure2_5x	--with-users-admin=/usr/bin/userdrake \
 		--with-gdm-setup=/usr/bin/gdmsetup \
 		--with-gdm-config=/etc/X11/gdm/custom.conf --disable-scrollkeeper
