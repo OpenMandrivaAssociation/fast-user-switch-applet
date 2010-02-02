@@ -17,6 +17,8 @@ Patch3: fast-user-switch-applet-2.20.0-no-session.patch
 Patch5: fast-user-switch-applet-2.20.0-throttle.patch
 # (fc) 2.20.0-2mdv respect gdm Include user key (GNOME bug #477666)
 Patch7: fast-user-switch-applet-2.24.0-many-users.patch
+Patch8: fast-user-switch-applet-2.24.0-link.patch
+Patch9: fast-user-switch-applet-2.24.0-fix-str-fmt.patch
 
 License: GPLv2+
 Group: Graphical desktop/GNOME
@@ -45,8 +47,11 @@ the same users as the GDM face browser.
 %patch3 -p1 -b .no-session
 %patch5 -p1 -b .throttle
 %patch7 -p1 -b .many-users
+%patch8 -p0 -b .link
+%patch9 -p0 -b .str
 
 %build
+autoreconf -fi
 %configure2_5x	--with-users-admin=/usr/bin/userdrake \
 		--with-gdm-setup=/usr/bin/gdmsetup \
 		--with-gdm-config=/etc/X11/gdm/custom.conf --disable-scrollkeeper
