@@ -1,0 +1,14 @@
+--- src/fusa-utils.c.str	2010-02-02 15:37:19.000000000 +0100
++++ src/fusa-utils.c	2010-02-02 15:37:46.000000000 +0100
+@@ -61,9 +61,10 @@
+   dialog = gtk_message_dialog_new (NULL, 0,
+ 				   GTK_MESSAGE_ERROR,
+ 				   GTK_BUTTONS_NONE,
++				   "%s",
+ 				   primary_markup);
+   gtk_message_dialog_format_secondary_markup (GTK_MESSAGE_DIALOG (dialog),
+-					      secondary_markup);
++					      "%s",secondary_markup);
+   gtk_dialog_add_button (GTK_DIALOG (dialog), GTK_STOCK_QUIT,
+ 				     GTK_RESPONSE_CLOSE);
+ 

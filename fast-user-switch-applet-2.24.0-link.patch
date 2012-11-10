@@ -1,0 +1,10 @@
+--- configure.ac.link	2010-02-02 15:39:44.000000000 +0100
++++ configure.ac	2010-02-02 15:39:57.000000000 +0100
+@@ -51,6 +51,7 @@
+ PKG_CHECK_MODULES(APPLET, gtk+-2.0 >= $GTK_REQUIRED_VERSION
+ 	     libpanelapplet-2.0 >= $PANEL_REQUIRED_VERSION
+ 	     libglade-2.0 >= $GLADE_REQUIRED_VERSION
++	     libgnomeui-2.0
+ 	     gio-2.0 >= $GLIB_REQUIRED_VERSION)
+ AC_SUBST(APPLET_CFLAGS)
+ AC_SUBST(APPLET_LIBS)
