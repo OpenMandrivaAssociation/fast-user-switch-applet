@@ -22,7 +22,7 @@ Patch9: fast-user-switch-applet-2.24.0-fix-str-fmt.patch
 
 License: GPLv2+
 Group: Graphical desktop/GNOME
-Url: http://ignore-your.tv/fusa/
+Url: https://ignore-your.tv/fusa/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: gnome-panel-devel
 BuildRequires: intltool
