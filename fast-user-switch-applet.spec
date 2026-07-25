@@ -1,6 +1,6 @@
 %define name fast-user-switch-applet
 %define version 2.24.0
-%define release %mkrel 2
+%define release 3
 
 Summary: Fast User-Switching Applet for GNOME
 Name: %{name}
